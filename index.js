@@ -23,41 +23,34 @@ function getHumanChoice() {
 
 
 function playGame() {
-    // Initialize scores
-    let humanScore = 0;
-    let computerScore = 0;
   
-    // Play 5 rounds
-    for (let round = 1; round <= 5; round++) {
-      console.log(`Round ${round}:`);
-      
-      // Get choices for this round
-      const humanChoice = getHumanChoice();
-      const computerChoice = getComputerChoice();
-      
-      // Play a single round
-      const result = playRound(humanChoice, computerChoice);
+  let humanScore = 0;
+  let computerScore = 0;
+
+  for (round = 1; round <= 5; round++;) {
+  console.log(`Round ${round}:`);
+
+  const humanChoice = getHumanChoice();
+  const computerChoice = getComputerChoice();
   
-      // Update scores based on the round result
-      if (result === "human") {
-        humanScore++;
-      } else if (result === "computer") {
-        computerScore++;
-      }
-  
-      // Log the current scores after the round
-      console.log(`Current Scores: You - ${humanScore}, Computer - ${computerScore}\n`);
-    }
-  
-    // Declare the winner
-    if (humanScore > computerScore) {
-      console.log(`Congratulations! You won the game with a score of ${humanScore} to ${computerScore}.`);
-    } else if (humanScore < computerScore) {
-      console.log(`Game Over! The computer won with a score of ${computerScore} to ${humanScore}.`);
-    } else {
-      console.log(`It's a tie! Both you and the computer scored ${humanScore}.`);
-    }
+  const result = playRound(humanChoice, computerChoice);
+
+
+  if (result === "human") {
+    humanScore++;
+  } else if (result === "computer") {
+    computerScore++;
   }
+
+  console.log(`Current Scores: You - ${humanScore}, Computer - ${computerScore}\n`);
+
+
+  if (humanScore > computerScore) {
+    console.log(`Congratulations. You won the game with a score of ${humanScore} to ${computerScore}`);
+  }
+
+
+}
   
   // Refactor playRound to return the winner
   function playRound(humanChoice, computerChoice) {
