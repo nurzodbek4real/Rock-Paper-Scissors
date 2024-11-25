@@ -27,7 +27,7 @@ function playGame() {
   let humanScore = 0;
   let computerScore = 0;
 
-  for (round = 1; round <= 5; round++;) {
+  for (round = 1; round <= 5; round++) {
   console.log(`Round ${round}:`);
 
   const humanChoice = getHumanChoice();
@@ -47,9 +47,12 @@ function playGame() {
 
   if (humanScore > computerScore) {
     console.log(`Congratulations. You won the game with a score of ${humanScore} to ${computerScore}`);
+  } else if (humanScore < computerScore) {
+    console.log(`Game over! The computer won with the score of ${computerScore} to ${humanScore}`);
+  } else {
+    console.log(`It's a tie. Both you and the computer scored ${humanScore}`);
   }
-
-
+}
 }
   
   // Refactor playRound to return the winner
@@ -78,4 +81,3 @@ function playGame() {
   
   // Example Game Start
   playGame();
-  
